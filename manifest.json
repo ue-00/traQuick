@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "traQuick",
+  "version": "1.0.0",
+  "description": "traQ に9点ボタンのサービスにtraQingなどを追加 + カスタムサイドバーリンクを編集可能にする拡張機能（表示上ホームチャンネルを複数にするなど）",
+  "permissions": ["storage"],
+  "host_permissions": ["https://q.trap.jp/*"],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "action": {
+    "default_title": "traQ Channel Tools",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["https://q.trap.jp/*"],
+      "js": [
+        "content_services.js",
+        "content_quick.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

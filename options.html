@@ -1,0 +1,55 @@
+<!-- traQuick の options.html を流用 -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>traQ Channel 設定</title>
+  <link rel="icon" href="icon.png" />
+  <style>
+    body { background:#f5f5f5; max-width:800px; margin:0 auto; padding:16px; box-sizing:border-box; }
+    h1 { margin-bottom:24px; }
+    #label,#href,#section,#add { display:block; width:100%; font-size:12px; margin-bottom:4px; padding:10px; box-sizing:border-box; border:1px solid #ccc; border-radius:6px; }
+    #add { background:#007bff; color:#fff; border:none; cursor:pointer; }
+    #add:hover { background:#0056b3; }
+    ul { list-style:none; padding-left:0; }
+    .link-item { display:flex; align-items:center; padding:8px 12px; border:1px solid #ddd; border-radius:6px; margin-bottom:4px; background:#f9f9f9; white-space:nowrap; overflow:hidden; }
+    .handle-icon, .delete-button { width:12px; height:12px; cursor:grab; margin-right:12px; }
+    .delete-button { cursor:pointer; margin-left:12px; }
+    .link-label { min-width:200px; font-size:12px; overflow:hidden; text-overflow:ellipsis; flex-grow:1; }
+    .link-url { min-width:200px; font-size:12px; color:#555; margin-left:8px; overflow:hidden; text-overflow:ellipsis; }
+    .title-icon {
+      width: 32px;
+      height: 32px;
+      margin-right: 8px;
+    }
+    .title {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      font-weight: bold;
+      /*margin-bottom: 32px;*/
+    }
+  </style>
+</head>
+<body>
+  <h1 class="title">
+    <img src="icon.svg" alt="icon" class="title-icon">
+    カスタムリンク設定
+  </h1>
+  <div class="form-group">
+    <input id="label" placeholder="表示名" />
+    <input id="href" placeholder="https://..." />
+    <select id="section">
+      <option value="home">ホームチャンネル</option>
+      <option value="channel">チャンネル</option>
+    </select>
+    <button id="add">追加</button>
+  </div>
+  <h2>ホームチャンネル</h2>
+  <ul id="home-list"></ul>
+  <h2>チャンネル</h2>
+  <ul id="channel-list"></ul>
+  <script src="Sortable.min.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
